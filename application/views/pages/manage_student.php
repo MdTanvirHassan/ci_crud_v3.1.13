@@ -9,12 +9,15 @@
 							  </tr>
 						  </thead>   
 						  <tbody>
+							<?php 
+								foreach ($all_students_info as $v_student) {
+							?>
 							<tr>
 
-								<td class="center">1</td>
-								<td class="center">Tanvir</td>
-								<td class="center">01925532372</td>
-                                <td>123</td>
+								<td class="center"> <?php echo $v_student->student_id ?> </td>
+								<td class="center"> <?php echo $v_student->student_name ?> </td>
+								<td class="center"> <?php echo $v_student->student_phone ?> </td>
+                                <td class="center"> <?php echo $v_student->student_roll ?> </td>
 								<td class="center">
 									<a class="btn btn-info" href="#">
 										<i class="halflings-icon white edit"></i>  
@@ -24,6 +27,7 @@
 									</a>
 								</td>
 							</tr>
+							<?php } ?>
 
                             
 							

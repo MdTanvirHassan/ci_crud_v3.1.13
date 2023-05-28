@@ -23,4 +23,11 @@ class admin_model extends CI_Model
         $data['student_roll'] = $this->input->post('student_roll', true);
         $this->db->insert('student',$data);
     }
+    public function all_students_info(){
+        $this->db->SELECT('*');
+        $this->db->FROM('student');
+        $query_result = $this->db->get();
+        $student_info=$query_result->result();
+        return $student_info;
+    }
 }
