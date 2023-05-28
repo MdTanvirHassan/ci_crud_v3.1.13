@@ -47,4 +47,10 @@ class admin_model extends CI_Model
         $this->db->WHERE('student_id',$student_id);
         $this->db->update('student',$data);
     }
+
+    public function delete_student_by_id($student_id){
+       
+        $this->db->WHERE('student_id',$student_id);
+        $this->db->delete('student');
+    }
 }

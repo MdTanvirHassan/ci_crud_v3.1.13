@@ -1,3 +1,12 @@
+<p>
+						<?php
+						$message = $this->session->userdata('message');
+						if ($message) {
+							echo "<span class='alert alert-danger'>$message</span>";
+							$this->session->unset_userdata('message');
+						}
+						?>
+					</p>
 <table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
@@ -22,7 +31,7 @@
 									<a class="btn btn-info" href="<?php echo base_url();?>edit-student/<?php echo $v_student->student_id ?>">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-									<a class="btn btn-danger" href="#">
+									<a class="btn btn-danger" id="delete" href="<?php echo base_url();?>delete-student/<?php echo $v_student->student_id ?>">
 										<i class="halflings-icon white trash"></i> 
 									</a>
 								</td>
