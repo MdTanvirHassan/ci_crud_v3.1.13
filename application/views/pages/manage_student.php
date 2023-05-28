@@ -19,7 +19,7 @@
 								<td class="center"> <?php echo $v_student->student_phone ?> </td>
                                 <td class="center"> <?php echo $v_student->student_roll ?> </td>
 								<td class="center">
-									<a class="btn btn-info" href="#">
+									<a class="btn btn-info" href="<?php echo base_url();?>edit-student/<?php echo $v_student->student_id ?>">
 										<i class="halflings-icon white edit"></i>  
 									</a>
 									<a class="btn btn-danger" href="#">

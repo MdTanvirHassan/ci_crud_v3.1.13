@@ -78,5 +78,19 @@ class Admin extends CI_Controller
         $this->load->view('dashboard', $data);
     }
 
+    public function edit_student($student_id)
+    {
+        $data = array();
+        $data['all_students_info_by_id'] =$this->admin_model->all_students_info_by_id($student_id);
+        $data['admin_main_content'] = $this->load->view('pages/edit_student', '', true);
+        $this->load->view('pages/edit_student', $data);
+    }
     
+    public function update_student(){
+        $this->admin_model->update_student_info();
+        $sdata['message'] = 'Update successfully!';
+        $this->session->set_userdata($sdata);
+        redirect('manage-student');
+    }
+
 }

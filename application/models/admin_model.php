@@ -30,4 +30,21 @@ class admin_model extends CI_Model
         $student_info=$query_result->result();
         return $student_info;
     }
+    public function all_students_info_by_id($student_id){
+        $this->db->SELECT('*');
+        $this->db->FROM('student');
+        $this->db->WHERE('student_id',$student_id);
+        $query_result = $this->db->get();
+        $student_info=$query_result->row();
+        return $student_info;
+    }
+    public function update_student_info(){
+        $data = array(); 
+        $student_id=$this->input->post('student_id',true);
+        $data['student_name'] = $this->input->post('student_name', true);
+        $data['student_phone'] = $this->input->post('student_phone', true);
+        $data['student_roll'] = $this->input->post('student_roll', true);
+        $this->db->WHERE('student_id',$student_id);
+        $this->db->update('student',$data);
+    }
 }

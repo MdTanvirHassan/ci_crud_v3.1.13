@@ -61,3 +61,5 @@ $route['manage-student'] = 'admin/manage_student';
 $route['edit-admin'] = 'admin/edit_admin';
 $route['dashboard'] = 'admin/dashboard';
 $route['save-student'] = 'admin/save_student';
+$route['edit-student/(.+)'] = 'admin/edit_student/$1';
+$route['update-student'] = 'admin/update_student';
